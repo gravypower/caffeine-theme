@@ -20,6 +20,12 @@
                 <h1 id="post-title">
                     {{{title}}}
                 </h1>
+                <div>
+                    by 
+                     {{#author}}
+                     <a href="{{url}}">{{name}}</a>
+                     {{/author}}
+                </div>
                 <div class="share">
                     {{> share }}
                 </div>
@@ -27,6 +33,8 @@
              <div class="post-content">
                 {{content}}
             </div>
+            {{!-- Everything inside the #author tags pulls data from the author --}}
+            {{> author-blurb}}
             {{> comments}}
         </div>
     </div>
