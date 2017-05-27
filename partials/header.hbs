@@ -1,14 +1,14 @@
 <header id="default-nav-header" class="nav-header nav-header-fixed animated">
     <a id="home-button" href="{{@blog.url}}">
-    {{#if author}}
-	{{#author}}
-        <img src="{{image}}" alt="{{name}} icon" class="icon rounded hvr-buzz-out" />
-	{{/author}}
-
-{{else}}
         <img src="{{asset "img/icons/icon.png"}}" alt="{{@blog.title}} icon" class="icon rounded hvr-buzz-out" />
-        {{/if}}
-      </a>
+    </a>
+    {{#get "users" limit="all"}}
+      {{#foreach users}}
+         <a href="{{url}}">
+            <img src="{{image}}" alt="{{name}} icon" class="icon rounded hvr-buzz-out" />
+        </a>
+      {{/foreach}}
+    {{/get}}
     <a class="tags-button right">
         <i class="fa fa-search hvr-grow"></i>
     </a>
